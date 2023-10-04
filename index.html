@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="container">
+
+    <h1>Age Calculator</h1>
+    <img src="happy-birthday.png" alt="">
+    <p class="subtitle">Type or select your date of birth</p>
+    <input type="date" name="" id="">
+    <p class="count">
+        You're _ years _ months _ days old.
+    </p>
+</div>
+
+
+
+</body>
+<script>
+
+
+let inputdate = document.querySelector("input")
+let para = document.querySelector("p.count")
+
+inputdate.addEventListener("input", () => {
+    let birthdate = new Date(inputdate.value)
+    let currentdate = new Date()
+    let newDate = new Date(currentdate-birthdate)
+    
+    let years = newDate.getFullYear() - 1970
+    let months = newDate.getMonth()
+    let days = newDate.getDate()-1
+
+    para.innerText = `You're ${years} years ${months} months ${days} days old.`
+})
+
+</script>
+</html>
